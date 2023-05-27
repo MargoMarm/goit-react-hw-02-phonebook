@@ -1,7 +1,66 @@
 import styled from '@emotion/styled';
 
-export const ContactsList = styled.ul``;
+export const Title = styled.h2`
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom:10px
 
-export const ListItem = styled.li``;
+`;
 
-export const DeleteBtn = styled.button``
+export const ContactsList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 35px;
+`;
+
+export const ListItem = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const DeleteBtn = styled.button`
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-family: Lato, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  background: #0fc1dd;
+  border: none;
+  z-index: 1;
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #2ba2cd;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    color: #fff;
+  }
+
+  &:hover:after {
+    left: 0;
+    width: 100%;
+  }
+`;

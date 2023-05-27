@@ -1,11 +1,17 @@
-const { FilterInput } = require('./Filter.styled');
+import { FilterInput, Label } from './Filter.styled';
 
 const Filter = ({value, onChange}) => {
   return (
-    <label>
+    <Label>
       Find contacts by name
-      <FilterInput type="text" name="filter" value={value} onChange={onChange}></FilterInput>
-    </label>
+      <FilterInput
+        type="text"
+        name="filter"
+        placeholder="Name"
+        value={value}
+        onChange={onChange}
+      ></FilterInput>
+    </Label>
   );
 };
 
