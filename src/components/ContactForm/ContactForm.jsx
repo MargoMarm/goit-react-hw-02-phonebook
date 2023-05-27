@@ -1,5 +1,4 @@
-import { Component} from 'react';
-
+import { Component } from 'react';
 import { Input, AddButton, Wrapper, Title } from './ContactForm.styled';
 
 class ContactInput extends Component {
@@ -17,7 +16,8 @@ class ContactInput extends Component {
   addContact = () => {
     this.props.creatContact(this.state);
 
-    this.setState({ name: '', number: '' });
+	  this.setState({ name: '', number: '' });
+	  
   };
 
   render() {

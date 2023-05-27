@@ -2,6 +2,8 @@ import { Component } from 'react';
 import ContactInput from './ContactForm/ContactForm';
 import Contacts from './Contacts/Contacts';
 import { nanoid } from 'nanoid';
+import Notiflix from 'notiflix';
+
 import Filter from './Filter/Filter';
 import { WrapperContent } from './App.styled';
 
@@ -26,9 +28,20 @@ export class App extends Component {
       id: nanoid(),
     };
 
-    this.setState(prevState => ({
-      contacts: [contact, ...prevState.contacts],
-    }));
+    if (
+      this.state.contacts.find(
+        existingContact => existingContact.name === contact.name
+      )
+    ) {
+      Notiflix.Notify.failure(`${contact.name} is already in your contacts`);
+    } else {
+      this.setState(prevState => ({
+        contacts: [contact, ...prevState.contacts],
+      }));
+      Notiflix.Notify.success(
+        `${contact.name} has been successfully added to  your phonebook`
+      );
+    }
   };
 
   deleteContact = contactId => {
@@ -37,14 +50,14 @@ export class App extends Component {
     }));
   };
 
-	getFiltredContacts = () => {
-		const { contacts, filter } = this.state;
-		
-		const filtredContacts = contacts.filter(contact =>
+  getFiltredContacts = () => {
+    const { contacts, filter } = this.state;
+
+    const filtredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
-			return filtredContacts
-	}
+    return filtredContacts;
+  };
   hadleFilterChange = e => {
     this.setState({ filter: e.target.value });
   };
