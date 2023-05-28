@@ -1,11 +1,10 @@
 import { Component } from 'react';
-import ContactInput from './ContactForm/ContactForm';
+import ContactForm from './ContactForm/ContactForm';
 import Contacts from './Contacts/Contacts';
-import { nanoid } from 'nanoid';
-import Notiflix from 'notiflix';
-
 import Filter from './Filter/Filter';
 import { WrapperContent } from './App.styled';
+import { nanoid } from 'nanoid';
+import Notiflix from 'notiflix';
 
 export class App extends Component {
   state = {
@@ -65,7 +64,7 @@ export class App extends Component {
   render() {
     return (
       <WrapperContent>
-        <ContactInput creatContact={this.creatContact} />
+        <ContactForm creatContact={this.creatContact} />
         <Contacts
           deleteContact={this.deleteContact}
           contacts={this.getFiltredContacts()}

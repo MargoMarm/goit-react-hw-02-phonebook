@@ -1,7 +1,8 @@
 import { ContactsList, ListItem, DeleteBtn, Title } from './Contacts.styled';
+import PropTypes from 'prop-types';
 
 const Contacts = ({ contacts, deleteContact }) => {
-	return (
+  return (
     <>
       <Title>Contacts</Title>
       <ContactsList>
@@ -19,5 +20,10 @@ const Contacts = ({ contacts, deleteContact }) => {
     </>
   );
 };
+
+Contacts.propTypes = {
+	contacts: PropTypes.array,
+	deleteContact: PropTypes.func.isRequired
+}
 
 export default Contacts;

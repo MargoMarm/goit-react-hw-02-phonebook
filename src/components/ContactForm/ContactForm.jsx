@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Input, AddButton, Wrapper, Title } from './ContactForm.styled';
+import { Input, AddButton, Form, Title } from './ContactForm.styled';
 
-class ContactInput extends Component {
+class ContactForm extends Component {
   state = {
     name: '',
     number: '',
@@ -13,18 +13,18 @@ class ContactInput extends Component {
     });
   };
 
-  addContact = () => {
+  addContact = e => {
+    e.preventDefault();
     this.props.creatContact(this.state);
 
-	  this.setState({ name: '', number: '' });
-	  
+    this.setState({ name: '', number: '' });
   };
 
   render() {
-	  return (
+    return (
       <>
         <Title>Phonebook</Title>
-        <Wrapper>
+        <Form onSubmit={this.addContact}>
           <Input
             type="text"
             name="name"
@@ -45,11 +45,12 @@ class ContactInput extends Component {
             onChange={this.handleChange}
             value={this.state.number}
           />
-          <AddButton onClick={() => this.addContact()}>Add contacts</AddButton>
-        </Wrapper>
+          <AddButton type="submit">Add contacts</AddButton>
+        </Form>
       </>
     );
   }
 }
 
-export default ContactInput;
+
+export default ContactForm;
