@@ -11,9 +11,12 @@ export const Title = styled.h2`
 
 export const ContactsList = styled.ul`
   list-style: none;
-  padding: 0;
   margin: 0;
   margin-bottom: 35px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 25px;
+  background-color: white;
 `;
 
 export const ListItem = styled.li`
@@ -40,6 +43,8 @@ export const DeleteBtn = styled.button`
   background: #0fc1dd;
   border: none;
   z-index: 1;
+  box-shadow: rgba(255, 255, 255, 0.5) 2px 2px 2px 0px inset,
+    rgba(0, 0, 0, 0.1) 7px 7px 20px 0px, rgba(0, 0, 0, 0.1) 4px 4px 5px 0px;
 
   &:after {
     position: absolute;

@@ -4,10 +4,14 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 270px;
-  padding: 20px 10px;
+  width: 300px;
+  padding: 20px 30px;
+  padding-bottom: 25px;
   border-radius: 5px;
   margin-bottom: 35px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  background-color: white;
 `;
 export const Title = styled.h2`
   font-size: 30px;
@@ -18,7 +22,7 @@ export const Title = styled.h2`
 
 export const Input = styled.input`
   display: block;
-  width: 180px;
+  width: 100%;
   margin-bottom: 10px;
   margin-top: 10px;
   padding: 5px;
@@ -35,7 +39,7 @@ export const Input = styled.input`
 
 export const AddButton = styled.button`
   display: block;
-  width: 196px;
+  width: 100%;
   height: 30px;
   cursor: pointer;
   margin-top: 15px;
